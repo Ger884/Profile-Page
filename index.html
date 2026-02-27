@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ชินณพัฒน์ | Profile</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ===== LAYOUT หลัก ===== */
+    body {
+      background: #0f0f0f;
+      color: #e5e5e5;
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 680px;   /* จำกัดความกว้างให้อ่านง่าย */
+      margin: 0 auto;     /* จัดให้อยู่กลางหน้า */
+      padding: 60px 24px;
+    }
+
+    /* ===== รูปโปรไฟล์ ===== */
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;           /* ทำให้รูปเป็นวงกลม */
+      border: 3px solid #7c3aed;    /* ขอบสีม่วง */
+    }
+
+    /* ===== ชื่อ ===== */
+    h1 {
+      font-size: 28px;
+      margin-top: 16px;
+    }
+
+    h1 span { color: #7c3aed; } /* ชื่อเป็นสีม่วง */
+
+    /* ===== ข้อความ bio ===== */
+    .bio {
+      color: #888;        /* สีเทาอ่อน ดูเป็น sub-text */
+      margin-top: 10px;
+      line-height: 1.7;   /* ระยะห่างบรรทัด อ่านง่ายขึ้น */
+      font-size: 15px;
+    }
+
+    /* ===== เส้นแบ่ง section ===== */
+    hr {
+      border: none;
+      border-top: 1px solid #222;
+      margin: 36px 0;
+    }
+
+    /* ===== หัวข้อ section (SKILLS, PROJECTS, CONTACT) ===== */
+    h2 {
+      font-size: 16px;
+      color: #888;
+      text-transform: uppercase;      /* ตัวพิมพ์ใหญ่ทั้งหมด */
+      letter-spacing: 0.08em;         /* เว้นระยะตัวอักษรนิดหน่อย */
+      margin-bottom: 16px;
+    }
+
+    /* ===== SKILLS — แสดงแบบ inline คั่นด้วยจุด ===== */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;  /* ขึ้นบรรทัดใหม่อัตโนมัติถ้าเต็ม */
+      gap: 8px;
+    }
+
+    .skill {
+      font-size: 14px;
+      color: #ccc;
+      padding: 4px 0;
+    }
+
+    /* เพิ่มจุด · หลังทุก skill ยกเว้นอันสุดท้าย */
+    .skill::after { content: ' ·'; color: #444; }
+    .skill:last-child::after { content: ''; }
+
+    /* ===== PROJECTS — แต่ละแถวคลิกได้ ลิงก์ไป GitHub ===== */
+    .project {
+      padding: 14px 0;
+      border-bottom: 1px solid #1e1e1e;
+      display: flex;
+      justify-content: space-between;  /* ชื่อซ้าย stack ขวา */
+      align-items: baseline;
+      cursor: pointer;
+      transition: color 0.2s;
+      text-decoration: none;  /* เอาเส้นใต้ link ออก */
+      color: inherit;
+    }
+
+    /* hover แล้วเปลี่ยนสีเป็นม่วง */
+    .project:hover { color: #7c3aed; }
+    .project:hover .project-stack { color: #7c3aed; opacity: 0.6; }
+
+    .project-name { font-size: 15px; font-weight: 500; }
+
+    .project-stack {
+      font-size: 12px;
+      color: #555;
+      transition: color 0.2s;
+    }
+
+    /* ===== CONTACT LINKS ===== */
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-links a {
+      color: #888;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .contact-links a:hover { color: #e5e5e5; }
+  </style>
+</head>
+<body>
+
+  <img src="img/Screenshot 2026-02-10 232318.png" alt="profile">
+  <h1><span>ชินณพัฒน์ นุชอนงค์</span></h1>
+  <p class="bio">
+    Grade 11 At Rattanathibate School<br>
+  <div class="skills">
+    <span class="skill">PHP</span>
+    <span class="skill">HTML / CSS</span>
+    <span class="skill">JavaScript</span>
+    <span class="skill">C++</span>
+    <span class="skill">Python</span>
+    <span class="skill">Git</span>
+    <span class="skill">MySQL</span>
+  </div>
+  </p>
+
+  <hr>
+
+  <h2>Contact</h2>
+  <div class="contact-links">
+    <a href="https://github.com/Ger884" target="_blank">Github</a>
+    <a href="https://www.facebook.com/ger.nuch/?locale=th_TH">Facebook</a>
+    <a href="https://www.instagram.com/tigger.js/">Instagram</a>
+    <a href="mailto:thikkexrn@gmail.com">thikkexrn@gmail.com</a>
+  </div> 
+
+  <hr>
+
+  <h2>Projects</h2>
+  <!-- แต่ละ <a> คือ 1 โปรเจกต์ — กดแล้วเปิด GitHub ใน tab ใหม่ -->
+  <div id="project-list">
+    <a class="project" href="https://github.com/Ger884/rt_council_count" target="_blank">
+      <span class="project-name">Counting Student_council</span>
+      <span class="project-stack">HTML · CSS · JS · Firebase</span>
+    </a>
+    <a class="project" href="https://github.com/Ger884/PlantBox" target="_blank">
+      <span class="project-name">PlantBox</span>
+      <span class="project-stack">HTML · CSS · JS · MYSQL</span>
+    </a>
+    <a class="project" href="https://github.com/Ger884/students_council" target="_blank">
+      <span class="project-name">KaoKai - RT</span>
+      <span class="project-stack">HTML · CSS · JS</span>
+    </a>
+  </div>
+
+  <hr>
+  
+  <script>
+    // ===== DOM Manipulation =====
+    // เลือก element ทุกตัวที่มี class "project"
+    const projects = document.querySelectorAll('.project');
+
+    projects.forEach(p => {
+      // เมื่อ mouse เข้า — ทำให้โปรเจกต์อื่นจางลง เหลือแค่ตัวที่ hover สว่าง
+      p.addEventListener('mouseenter', () => {
+        projects.forEach(x => x.style.opacity = '0.4');
+        p.style.opacity = '1';
+      });
+
+      // เมื่อ mouse ออก — คืนค่า opacity ทุกตัวกลับเป็นปกติ
+      p.addEventListener('mouseleave', () => {
+        projects.forEach(x => x.style.opacity = '1');
+      });
+    });
+  </script>
+
+</body>
+</html>
